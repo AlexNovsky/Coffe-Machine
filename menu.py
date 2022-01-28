@@ -1,7 +1,9 @@
 menu_list = ["latte", "espresso", "cappuccino"]
 
+
 class MenuItem:
     """Models each Menu Item."""
+
     def __init__(self, name, water, milk, coffee, cost):
         self.name = name
         self.cost = cost
@@ -14,6 +16,7 @@ class MenuItem:
 
 class Menu:
     """Models the Menu with drinks."""
+
     def __init__(self):
         self.menu = [
             MenuItem(name="latte", water=200, milk=150, coffee=24, cost=2.5),
@@ -33,4 +36,3 @@ class Menu:
         for item in self.menu:
             if item.name == order_name:
                 return item
-        # print("Sorry that item is not available.\nGood bye!")
