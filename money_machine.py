@@ -1,3 +1,4 @@
+char_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 class MoneyMachine:
 
     CURRENCY = "$"
@@ -17,11 +18,23 @@ class MoneyMachine:
         """Prints the current profit"""
         print(f"Money: {self.CURRENCY}{self.profit}")
 
+    # def valid_amount(self):
+    #     for char in coin_amount:
+    #         if char in char_list:
+    #             return False
+
     def process_coins(self):
         """Returns the total calculated from coins inserted."""
         print("Please insert coins.")
         for coin in self.COIN_VALUES:
-            self.money_received += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
+            # self.money_received += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
+            coin_amount = input(f"How many {coin}?: ")
+            # if coin_amount not in range(0,100) and coin_amount in char_list:
+            if coin_amount in range(0,100):
+                self.money_received += coin_amount * self.COIN_VALUES[coin]
+            else:
+                coin_amount = 0
+                print("You entered invalid amount. Only numbers acceptable.")
         return self.money_received
 
     def make_payment(self, cost):
