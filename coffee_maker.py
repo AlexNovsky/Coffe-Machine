@@ -1,7 +1,7 @@
 class CoffeeMaker:
-    '''
-    Making coffee related methods, defining starting resources
-    '''
+    """
+        Making coffee related methods, defining starting resources
+    """
 
     def __init__(self):
         self.resources = {
@@ -11,19 +11,19 @@ class CoffeeMaker:
         }
 
     def report(self):
-        '''
-        :return:    Report of all resources
-        '''
+        """
+            :return:    Report of all resources
+        """
         print(f"Water: {self.resources['water']}ml")
         print(f"Milk: {self.resources['milk']}ml")
         print(f"Coffee: {self.resources['coffee']}g")
 
     def is_resource_sufficient(self, drink):
-        '''
-        :param drink:
-        :return:    True if order can be made
-                    False if ingridients are insufficient
-        '''
+        """
+            :param drink:
+            :return:    True if order can be made
+                        False if ingridients are insufficient
+        """
         can_make = True
         for item in drink.ingredients:
             if drink.ingredients[item] > self.resources[item]:
@@ -32,9 +32,9 @@ class CoffeeMaker:
         return can_make
 
     def make_coffee(self, order):
-        '''
-        Deducts the required ingredients from the resources
-        '''
+        """
+            Deducts the required ingredients from the resources
+        """
         for item in order.ingredients:
             self.resources[item] -= order.ingredients[item]
         print(f"Here is your {order.name} ☕️. Enjoy!\n")
