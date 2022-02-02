@@ -1,5 +1,5 @@
 import re
-"""Importing RegEX for entered coins checking"""
+""" Importing RegEX for entered coins checking """
 
 
 class MoneyMachine:
@@ -71,4 +71,7 @@ class MoneyMachine:
         else:
             print("Sorry that's not enough money. Money refunded.")
             self.money_received = 0
+            """
+            Setting total amount as 0 for thr future orders or inputs
+            """
             return False
