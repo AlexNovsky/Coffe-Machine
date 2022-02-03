@@ -44,7 +44,7 @@ while is_on:
                 - Checking that entered menu_item is alphabetic, do avoid unexpected termination of script due
                  to the invalid format of entered menu_item. Users are so users, you know =) 
             """
-            print(f"Your choice is '{menu_item}'.\nSorry that item is not available.\nTry again!")
+            print(f"Your choice is '{menu_item}'.\nSorry that item is not available or you've entered wrong item.\nTry again!")
         else:
             drink = menu.find_drink(menu_item)
             """
